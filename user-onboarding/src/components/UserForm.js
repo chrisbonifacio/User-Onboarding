@@ -11,6 +11,8 @@ const UserForm = ({ errors, touched, values, status }) => {
   return (
     <Form className="form">
       <h1>Sign Up</h1>
+
+      {/* UserName */}
       <Field
         className="field"
         type="text"
@@ -20,17 +22,30 @@ const UserForm = ({ errors, touched, values, status }) => {
       {touched.username && errors.username && (
         <p className="error">{errors.username}</p>
       )}
+
+      {/* Email */}
       <Field className="field" type="email" name="email" placeholder="email" />
+      {touched.email && errors.email && <p className="error">{errors.email}</p>}
+
+      {/* Password */}
       <Field
         className="field"
         type="password"
         name="password"
         placeholder="password"
       />
+      {touched.password && errors.password && (
+        <p className="error">{errors.password}</p>
+      )}
+
+      {/* Terms of Service */}
       <label htmlFor="terms">
         I agree to the Terms of Service
         <Field className="field" type="checkbox" name="terms" />
       </label>
+      {touched.terms && errors.terms && <p className="error">{errors.terms}</p>}
+
+      {/* Submit Button */}
       <button type="submit">Register</button>
     </Form>
   );
