@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import * as yup from "yup";
 import Users from "./Users";
-import { Form, Field, withFormik, ErrorMessage } from "formik";
+import { Form, Field, withFormik } from "formik";
 
 const UserForm = ({ errors, touched, values, status }) => {
   // State
@@ -10,6 +10,7 @@ const UserForm = ({ errors, touched, values, status }) => {
 
   // Side Effect
   useEffect(() => {
+    // checks for POST request
     if (status) {
       setUsers([...users, status]);
     }
@@ -84,7 +85,7 @@ const FormikForm = withFormik({
   },
   // Form Validation and Error Messaging
   validationSchema: yup.object().shape({
-    name: yup.string().required("Please enter a username"),
+    username: yup.string().required("Please enter a username"),
     email: yup
       .string()
       .email()
@@ -93,7 +94,7 @@ const FormikForm = withFormik({
       .string()
       .min(6)
       .required("Please enter a password"),
-    tos: yup
+    terms: yup
       .boolean()
       .required("In order to register, you must accept the terms of service")
   }),
@@ -101,6 +102,7 @@ const FormikForm = withFormik({
   handleSubmit(values, { setStatus }) {
     // POST Request
     axios
+      // values is the object with our data in it
       .post("https://reqres.in/api/users", values)
       .then(response => {
         setStatus(response.data);
