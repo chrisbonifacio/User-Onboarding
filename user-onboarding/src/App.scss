@@ -1,11 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
 
+$blue: #4285f4;
+$white: #fff;
+
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Roboto, sans-serif;
 }
 
 .App {
   text-align: center;
+  padding: 2rem 0;
 }
 
 .form {
@@ -43,8 +50,17 @@ button {
   margin: 1rem 0;
   padding: 0.5rem 2rem;
   border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
   background: none;
   font-weight: 900;
   font-size: 1rem;
   font-family: Roboto, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background: $blue;
+    border: 1px solid $blue;
+    color: $white;
+  }
 }
