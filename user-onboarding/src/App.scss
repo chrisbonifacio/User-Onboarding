@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
+
+* {
+  font-family: Roboto, sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.field {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  margin: 1rem 0;
+  padding: 1rem;
+  width: 40%;
+  border-radius: 2px;
+  font-size: 1.2rem;
+
+  &[type="checkbox"] {
+    width: auto;
+    margin: 0 1rem;
+  }
+}
+
+label {
+  display: flex;
+  width: 20rem;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  max-width: 8rem;
+  margin: 1rem 0;
+  padding: 0.5rem 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: none;
+  font-weight: 900;
+  font-size: 1rem;
+  font-family: Roboto, sans-serif;
+}
