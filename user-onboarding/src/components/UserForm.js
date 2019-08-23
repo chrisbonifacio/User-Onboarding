@@ -57,6 +57,20 @@ const UserForm = ({ errors, touched, values, status }) => {
           <p className="error">{errors.password}</p>
         )}
 
+        {/* Role */}
+        <Field
+          className="field"
+          component="select"
+          name="role"
+          placeholder="role"
+        >
+          <option value=""> select a role</option>
+          <option value="Student" label="student" />
+          <option value="Team Lead" label="team lead" />
+          <option value="Instructor" label="instructor" />
+        </Field>
+        {touched.role && errors.role && <p className="error">{errors.role}</p>}
+
         {/* Terms of Service */}
         <label htmlFor="terms">
           I agree to the Terms of Service
@@ -77,12 +91,13 @@ const UserForm = ({ errors, touched, values, status }) => {
 
 // Formik enhancement
 const FormikForm = withFormik({
-  mapPropsToValues({ username, email, password, terms }) {
+  mapPropsToValues({ username, email, password, role, terms }) {
     return {
       username: username || "",
       email: email || "",
       password: password || "",
-      terms: terms || false
+      terms: terms || false,
+      role: role || ""
     };
   },
   // Form Validation and Error Messaging
@@ -96,6 +111,7 @@ const FormikForm = withFormik({
       .string()
       .min(6)
       .required("Please enter a password"),
+    role: yup.string().required("Please select a role"),
     terms: yup.boolean().oneOf([true], "Must accept Terms and Conditions")
   }),
   // Submit Handler
