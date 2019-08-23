@@ -11,7 +11,6 @@ const Users = ({ users }) => {
             <h1>username: {username}</h1>
             <p>email: {email}</p>
             <p>password: {password}</p>
-            <p>terms: {terms}</p>
           </div>
         );
       })}

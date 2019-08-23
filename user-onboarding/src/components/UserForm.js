@@ -4,16 +4,18 @@ import * as yup from "yup";
 import Users from "./Users";
 import { Form, Field, withFormik } from "formik";
 
+// Passing in props from Formik component
 const UserForm = ({ errors, touched, values, status }) => {
   // State
   const [users, setUsers] = useState([]);
 
   // Side Effect
   useEffect(() => {
-    // checks for POST request
+    // If status is true, add the object to the users array
     if (status) {
       setUsers([...users, status]);
     }
+    // Fires when status has changed
   }, [status]);
 
   // Form
