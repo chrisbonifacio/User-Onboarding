@@ -1,6 +1,7 @@
 import React from "react";
 
-const Users = ({ users }) => {
+const Users = props => {
+  const { users, setUsers } = props;
   return (
     <>
       <h1>Users</h1>
@@ -8,13 +9,20 @@ const Users = ({ users }) => {
         {users.map((user, key) => {
           const { username, email, password, role } = user;
           return (
-            <div key={key} className="user">
+            <div
+              onDoubleClick={e => {
+                e.preventDefault();
+                console.log(e.target);
+              }}
+              key={key}
+              className="user"
+            >
               <h2>{username}</h2>
               <p>
-                <bold>email:</bold> {email}
+                <strong>email:</strong> {email}
               </p>
               <p>
-                <bold>role:</bold> {role}
+                <strong>role:</strong> {role}
               </p>
             </div>
           );

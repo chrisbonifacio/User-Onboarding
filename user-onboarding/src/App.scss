@@ -85,10 +85,16 @@ button {
     align-items: flex-start;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 2px;
-    padding: 1.5rem 1rem;
+    padding: 1rem;
     margin: 0.5rem 0;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
 
     h2 {
+      color: $blue;
+      width: 100%;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
       font-size: 1.8rem;
       margin-bottom: 1rem;
     }
@@ -96,6 +102,16 @@ button {
     p {
       font-size: 1.2rem;
       line-height: 1.5;
+    }
+
+    &:hover {
+      background: $blue;
+      color: $white;
+
+      h2 {
+        color: $white;
+        border-color: $white;
+      }
     }
   }
 }

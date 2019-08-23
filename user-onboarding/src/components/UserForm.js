@@ -84,7 +84,7 @@ const UserForm = ({ errors, touched, values, status }) => {
         <button type="submit">Register</button>
       </Form>
 
-      <Users users={users} />
+      <Users users={users} setUsers={setUsers} />
     </>
   );
 };
