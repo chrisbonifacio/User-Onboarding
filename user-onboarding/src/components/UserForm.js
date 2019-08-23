@@ -94,9 +94,7 @@ const FormikForm = withFormik({
       .string()
       .min(6)
       .required("Please enter a password"),
-    terms: yup
-      .boolean()
-      .required("In order to register, you must accept the terms of service")
+    terms: yup.boolean().oneOf([true], "Must accept Terms and Conditions")
   }),
   // Submit Handler
   handleSubmit(values, { setStatus }) {
