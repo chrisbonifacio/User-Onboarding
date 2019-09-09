@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
+
+$blue: #4285f4;
+$white: #fff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+
+.App {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  label {
+    display: flex;
+    width: 20rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .field {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    margin: 1rem 0;
+    padding: 1rem;
+    width: 40%;
+    border-radius: 2px;
+    font-size: 1.2rem;
+
+    &[type="checkbox"] {
+      width: auto;
+      margin: 0 1rem;
+    }
+  }
+}
+
+.error {
+  color: red;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  max-width: 8rem;
+  margin: 1rem 0;
+  padding: 0.5rem 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  background: none;
+  font-weight: 900;
+  font-size: 1rem;
+  font-family: Roboto, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background: $blue;
+    border: 1px solid $blue;
+    color: $white;
+  }
+}
+
+.user-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 0 1.5rem;
+
+  .user {
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    h2 {
+      color: $blue;
+      width: 100%;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+
+    &:hover {
+      background: $blue;
+      color: $white;
+
+      h2 {
+        color: $white;
+        border-color: $white;
+      }
+    }
+  }
+}
